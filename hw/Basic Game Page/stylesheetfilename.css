@@ -1,0 +1,36 @@
+h1 { 
+    color:white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-bottom: 3px solid gray;
+    text-shadow:
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    4px 4px 0 #ffcc25,
+    -4px 4px 0 #ffcc25,
+    -4px -4px 0 #ffcc25,
+    4px -4px 0 #ffcc25;
+    }
+h2 {
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+}
+h3 { 
+    font-family: 'Times New Roman', Times, serif;
+    background-color: peachpuff;
+    padding: 1rem;
+    }
+blockquote { 
+    font-family: 'Times New Roman', Times, serif;
+    background-color: peachpuff;
+    padding: 1rem;
+    }
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    background-color: #fbfffe;
+}
