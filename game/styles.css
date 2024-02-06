@@ -1,0 +1,32 @@
+h1 { 
+    color:red;
+    font-family: sans-serif;
+    border-bottom: 1px solid blue;
+    }
+h3 {
+    font-family: 'Times New Roman', Times, serif;
+    margin-block-start: 40px;
+}
+p{
+    font-family: sans-serif;
+    margin-left: 10px;
+}
+blockquote { 
+    background-color: lightgray;
+    padding: 1rem;
+    }
+ul  {
+        font-family: sans-serif;
+        width: 50%;
+        margin:0 auto;
+    }
+    ul li{display: inline;}
+footer {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+a:link{color:rgb(255, 141, 188)}
+a:visited{color:brown}
+a:focus, a:hover{color:green; font-weight: bold;}
