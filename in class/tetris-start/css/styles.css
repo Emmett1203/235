@@ -1,0 +1,14 @@
+/* Do everything in this file */
+header{
+    border-bottom: 12px solid red;
+}
+
+img{
+    width: 200px;
+    float: left;
+    clear: left;
+}
+
+p{
+    width: 200px;
+}
