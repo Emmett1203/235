@@ -1,0 +1,44 @@
+h1 { 
+    color:rgb(202, 255, 186);
+    font-family: Arial, Helvetica, sans-serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+h2{
+    color:rgb(202, 255, 186);
+    font-family: Arial, Helvetica, sans-serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+h3{
+    color:rgb(202, 255, 186);
+    font-family: Arial, Helvetica, sans-serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }    
+p{
+    color:rgb(224, 255, 215);
+}
+#center{
+    text-align: center;
+    }
+#left{
+    text-align:left;
+    text-indent:12px;
+}
+#bigleft{
+    text-align:left;
+    text-indent:52px;
+}
+.bigbold{
+    font-weight:bold;
+    text-shadow: 4px 4px 3px rgb(105, 126, 106);
+}
+.smallshadow{
+    text-shadow: 1px 1px 3px rgb(105, 126, 106);
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+body{
+    background-color: rgb(27, 27, 27)
+}
+a:link{color:rgb(4, 177, 47)}
+a:visited{color:rgb(39, 88, 46)}
+a:focus, a:hover{color:rgb(0, 255, 0); font-weight: bold;}
