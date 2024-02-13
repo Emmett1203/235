@@ -9,24 +9,31 @@ h3 {
 }
 p{
     font-family: sans-serif;
-    margin-left: 10px;
+    margin-left: 5px;
+    border-bottom: 1px solid blue;
+
+}
+ul{
+    display: block;
+    list-style-type: disc;
+    font-family: sans-serif;
+    border-bottom: 1px solid blue;
+
 }
 blockquote { 
-    background-color: lightgray;
-    padding: 1rem;
+    background-color: rgb(144, 204, 245);
+    padding: 1rem;    
+
     }
-ul  {
-        font-family: sans-serif;
-        width: 50%;
-        margin:0 auto;
-    }
-    ul li{display: inline;}
+body{
+    background-color: rgb(156, 228, 204);
+}
 footer {
 display: flex;
 justify-content: center;
 align-items: center;
 }
 
-a:link{color:rgb(255, 141, 188)}
-a:visited{color:brown}
-a:focus, a:hover{color:green; font-weight: bold;}
+a:link{color:rgb(34, 52, 78)}
+a:visited{color:rgb(48, 33, 61)}
+a:focus, a:hover{color:rgb(0, 89, 255); font-weight: bold;}
