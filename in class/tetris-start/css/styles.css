@@ -4,32 +4,12 @@ header{
 }
 
 figure{
-    float: right;
-    width: 20%;
-}
-
-.tet{
-    float: left;
-    margin: 1em;
-    width: 30%;
-    background: rgb(255, 255, 185);
-
-}
-
-main .tet img{
-    width: 50%;
-    height: auto;
+    flex: auto;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 main figure img{
-    width: 140%;
-    margin: 1em;
-
-}  
-
-footer{
-    position: absolute;
-    top: 0;
-    text-align: right;
-
+    width: 50%;
 }
