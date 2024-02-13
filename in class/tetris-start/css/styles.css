@@ -3,12 +3,33 @@ header{
     border-bottom: 12px solid red;
 }
 
-img{
-    width: 200px;
-    float: left;
-    clear: left;
+figure{
+    float: right;
+    width: 20%;
 }
 
-p{
-    width: 200px;
+.tet{
+    float: left;
+    margin: 1em;
+    width: 30%;
+    background: rgb(255, 255, 185);
+
+}
+
+main .tet img{
+    width: 50%;
+    height: auto;
+}
+
+main figure img{
+    width: 140%;
+    margin: 1em;
+
+}  
+
+footer{
+    position: absolute;
+    top: 0;
+    text-align: right;
+
 }
