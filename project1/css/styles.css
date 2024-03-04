@@ -41,11 +41,32 @@ footer{
 main{
     max-width: 90%;
     margin: 0 auto;
-    float: left;
 }
 
-img{
-    float: right; 
-    width: 60%;
+.columnone{
+    float: left;
+    width: 33.33%;
+}
 
+.columntwo{
+    float: right;
+    width: 33.33%;
+}
+
+.columnthree{
+    float: right;
+    width: 33.33%;
+}
+
+.wrapper::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+img {
+    display: flex;
+    float: right;
+    width: 55%;
+    border: 6px solid black;
 }
