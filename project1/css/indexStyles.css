@@ -1,0 +1,72 @@
+/* Do everything in this file */
+header{
+    color: white;
+    background-color: rgb(61, 61, 240);    
+    border-top: 1px solid rgb(61, 61, 240);
+    margin: 1em;
+    font-family: sans-serif;
+}
+
+.blank{
+    border-top: 1px solid rgb(255, 255, 255);
+    color: rgb(61, 61, 240);
+}
+
+h1{
+    font-family: sans-serif;
+    font-size: 50px;
+}
+
+.walking img{
+    width: 100px;
+    float: right;
+
+}
+
+h2{
+    font-family: sans-serif;
+}
+
+h3{
+    font-family: sans-serif;
+    color: rgb(61, 61, 240);
+}
+
+footer{
+    background-color: rgb(209, 189, 160);   
+    max-width: 100%;
+    margin: 1em;
+    }
+
+main{
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.columnone{
+    float: left;
+    width: 33.33%;
+}
+
+.columntwo{
+    float: right;
+    width: 33.33%;
+}
+
+.columnthree{
+    float: right;
+    width: 33.33%;
+}
+
+.wrapper::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+img {
+    display: flex;
+    float: right;
+    width: 40.33%;
+    border: 6px solid black;
+}
