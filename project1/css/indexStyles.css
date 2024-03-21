@@ -108,3 +108,7 @@ GodzillaIMG img {
     border: 6px solid black;
 
 }
+
+a:link{color:rgb(236, 16, 225)}
+a:visited{color:rgb(155, 8, 147)}
+a:focus, a:hover{color:rgb(255, 54, 245); font-weight: bold;}
