@@ -7,6 +7,10 @@ header{
     font-family: sans-serif;
 }
 
+body{
+    background-color: rgb(238,238,255);
+}
+
 .blank{
     border-top: 1px solid rgb(255, 255, 255);
     color: rgb(61, 61, 240);
@@ -34,28 +38,41 @@ h3{
 
 footer{
     background-color: rgb(209, 189, 160);   
-    max-width: 100%;
-    margin: 1em;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
     }
 
 main{
-    max-width: 90%;
+    max-width: 50%;
     margin: 0 auto;
 }
 
 .columnone{
     float: left;
-    width: 33.33%;
+    width: 32.33%;
+    border: 1px solid rgba(136, 136, 136, 0.384);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
 }
 
-.columntwo{
-    float: right;
-    width: 33.33%;
-}
-
-.columnthree{
-    float: right;
-    width: 33.33%;
+@media screen and (max-width: 1150px) {
+    main{
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    footer{
+        background-color: rgb(209, 189, 160);   
+        max-width: 100%;
+        margin: 1em;
+        }
+        .columnone{
+            float: left;
+            width: 32.33%;
+            border: 1px solid rgba(136, 136, 136, 0.384);
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+        }
 }
 
 .wrapper::after {
@@ -64,9 +81,30 @@ main{
     clear: both;
 }
 
-img {
+#walking img {
     display: flex;
     float: right;
-    width: 40.33%;
+    width: 50.33%;
     border: 6px solid black;
+    margin: 1em;
+
+}
+
+.footer-box {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-box > div{
+    padding: 1%;
+    border: 1px solid rgba(0, 0, 0, 0.301);
+
+}
+
+GodzillaIMG img {
+    display: flex;
+    float: right;
+    width: 50.33%;
+    border: 6px solid black;
+
 }
