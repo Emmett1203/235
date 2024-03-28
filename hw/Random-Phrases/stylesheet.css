@@ -1,3 +1,34 @@
 body{
-    background-color: rgb(125, 141, 141)
+    background: url(1200px-8_ball_icon.svg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    background-color: rgb(15, 20, 20);
+    font-family: 'Times New Roman', Times, serif;
+    color: aliceblue;
+    text-align: center;
 }
+
+a{
+    font-size: 300%;
+    text-align: left;
+}
+
+button{
+    padding: 11px 39px;
+    background-color: black;
+    color: aliceblue;
+}
+
+button:hover{
+    background-color: rgb(31, 30, 30);
+    color: rgb(255, 255, 255);
+}
+
+button:active{
+    background-color: rgb(31, 30, 30);
+    color: rgb(110, 110, 110);
+}
+
+/* Eightball image https://en.m.wikipedia.org/wiki/File:8_ball_icon.svg */

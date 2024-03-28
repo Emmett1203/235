@@ -5,3 +5,34 @@
         <title>Random Phrases</title>
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
     </head>
+
+    <body>
+        <h1>Emmett McEvoy's Magic Eight Ball</h1>
+
+        <h3>ASK THE EIGHT BALL ANY QUESTION AND THE EIGHT BALL WILL PROBABLY ANSWER IT!</h3>
+        <h4>(Please do not blindly follow the eight ball.)</h4>
+
+        <h1><br></h1>
+
+        <button onclick="displayQuote()">ASK THE BALL</button>
+
+        <h2>Eight ball says:</h2>
+        <ol id="EightballWord">
+        </ol>
+
+        <script>
+            function displayQuote() 
+            {
+                location.reload();
+            }
+
+            let responses = ["Go for it", "Not likely", "Ask again", "Will happen", "Don't even try", "They don't solo Goku", "Are you stupid?", "Give me all of your money"];
+            
+            var responsesOL = document.querySelector("#EightballWord");
+
+            let newLi = document.createElement("a");
+            newLi.innerHTML = responses[Math.floor(Math.random() * responses.length)];
+            responsesOL.appendChild(newLi);    
+        </script>
+    </body>
+</html>
