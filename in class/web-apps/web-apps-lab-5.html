@@ -46,11 +46,29 @@ function radioClicked(e)
     document.querySelector('#info').innerHTML = 'You have selected "' + color + '"!';
 }
 
-let rbs= document.querySelectorAll("input[name='colorGroup']")
+let rbs= document.querySelectorAll("input[name='colorGroup']");
 for (let rb of rbs)
 {
     rb.addEventListener("click", radioClicked);
 }
+
+function submitClicked()
+{
+	let header = document.querySelector("legend");
+	let selectedColor = "black";
+
+	//let rbs= document.querySelectorAll("input[name='colorGroup']");
+	for (let rb of rbs)
+	{
+		if (rb.checked){
+			selectedColor = rb.value;
+		}
+	}
+
+	header.style.color = selectedColor;
+}
+
+document.querySelector("#colorButton").onclick = submitClicked;
 
 </script>
 </body>
