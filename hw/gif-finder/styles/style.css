@@ -4,15 +4,38 @@
 
  header{
      background: url(../images/cats.jpg);
-     height:195px;
- }
+     background-attachment: fixed; 
+     background-repeat: repeat;
+     background-position: center;
+     background-size: 50%, auto;
+     padding: 10px;
+     border-radius: 9px;
+     border: 3px solid rgb(0, 0, 0);
+    }
  
+footer{
+    width: 70%;
+    text-align: center;
+
+    margin-left: auto;
+    margin-right: auto;
+    left: 20%;
+
+    padding: 10px;
+    border-radius: 9px;
+    border: 3px solid rgb(0, 0, 0);
+
+    background-color: #fcfae5;
+}
+
+
  header h1{
      margin:0;
-     color:blue;
+     color:rgb(0, 0, 0);
      text-align:center;
      font-size:100px;
      padding-top: 35px;
+     text-shadow: 3px 2px white;
  }
  
  #status{
@@ -22,21 +45,25 @@
  
  .result {
     position: relative;
+    border-radius: 9px;
     height: 175px;
-    width: 100px;
-    float:left;
-    border:1px solid gray;
-    padding:5px;
+    width: 125px;
+    float: left;
+    left: 30px;
+
+    border: 3px solid rgb(0, 0, 0);
+    padding: 5px;
     margin-left:10px;
     margin-bottom:10px;
 }
 
 .result img {
     position: absolute;
-    left: 5px;
+    left: 5%;
     bottom: 5px;
-    display:block;
-    
+    height: 80%;
+    width: 90%;
+    display:block;    
 }
 
 .result span{
@@ -67,18 +94,18 @@ button{
 }
 
 button.green{
-    border-color: #8fc800;
-      background: #8fc800;
+    border-color: #ffffff;
+      background: #000000;
       background: linear-gradient(top, #8fc800 0%,#438c00 100%);
 }
 
 button:hover{
-    background: #8fDD00;
+    background: #0f1730;
 }
 
 button:active{
-    background: #8fFF00;
-    box-shadow : 0 0 6px rgba(0,0,0,.6);
+    background: #05038b;
+    box-shadow : 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
 button:focus {outline:0;}
