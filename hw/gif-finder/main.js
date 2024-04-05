@@ -73,8 +73,10 @@
 
 			let url = result.url;
 
+            let rating = (result.rating ? result.rating : "NA").toUpperCase();
+
 			let line = `<div class='result'><img src='${smallURL}' title= '${result.id}' />`;
-			line += `<span><a target='_blank' href='${url}'>View on Giphy</a></span></div>`;
+			line += `<span><a target='_blank' href='${url}'>View on Giphy</a> ${rating}</span></div>`;
 
 			bigString += line;
 		}
