@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
  	<title>Amiibo Finder</title>
- 	<style>/* We have no style! */</style>
+	 <link rel="stylesheet" href="styles/style.css">
   <script>
   "use strict";
 	window.onload = init;
@@ -53,7 +53,11 @@
 	function dataLoaded(e){
 		// 1 - e.target is the xhr object
 		let xhr = e.target;
-	
+
+		//Get tpye
+		var amiiboStyle = document.querySelector("#amiiboStyle");
+		var styleType = amiiboStyle.value;
+
 		// 2 - xhr.responseText is the JSON file we just downloaded
 		console.log(xhr.responseText);
 	
@@ -66,10 +70,21 @@
         for(let i=0; i<results.length; i++){
         let firstResult = results[i];
 		
-        let line = `<img src="${firstResult.image}" title="${firstResult.character}" />`;
-        line += `${firstResult.character}`
+		let line = `<div class='result'><img src="${firstResult.image}" title="${firstResult.character}" />`;
+        line += `<span>${firstResult.character}</span></div>`
 
-        bigString += line;
+		console.log(firstResult.type);
+		console.log(amiiboStyle);
+
+		if(styleType == "all")
+		{
+			bigString += line;
+		}
+		else if(firstResult.type != "all" && firstResult.type == styleType)
+		{
+			bigString += line;
+		}
+
         }
 
 		// 5 - display final results to user
@@ -85,6 +100,12 @@
 </header>
 
 <p>Search Term -&gt; <input id="searchterm" type="text" size="20" maxlength="20" autofocus value="mario" /></p>
+<select id="amiiboStyle">
+	<option value="all">All</option>
+	<option value="Figure">Figure</option>
+	<option value="Card">Card</option>
+	<option value="Band">Band</option>
+</select>
 <p><button type="button" id="search" class="green">Search!</button></p>
 <p id="debug"></p>
 <hr>
