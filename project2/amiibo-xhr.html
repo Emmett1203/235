@@ -58,6 +58,10 @@
 		var amiiboStyle = document.querySelector("#amiiboStyle");
 		var styleType = amiiboStyle.value;
 
+		//Check release
+		var amiiboDate = document.querySelector("#amiiboDate");
+		var dateType = amiiboDate.value;
+
 		// 2 - xhr.responseText is the JSON file we just downloaded
 		console.log(xhr.responseText);
 	
@@ -70,12 +74,38 @@
         for(let i=0; i<results.length; i++){
         let firstResult = results[i];
 		
-		let line = `<div class='result'><img src="${firstResult.image}" title="${firstResult.character}" />`;
-        line += `<span>${firstResult.character}</span></div>`
+		//I apologize in advance for this code. Actually I'm not sorry. I'm evil.
+		let line = ``;
+
+		if(dateType == "na" && firstResult.release.na != null){
+			line = `<div class='result'><img src="${firstResult.image}" title="${firstResult.character}" />`
+			line += `<span>${firstResult.character} ${firstResult.release.na}</span></div>`
+		}
+		
+		if(dateType == "eu" && firstResult.release.eu != null){
+			line = `<div class='result'><img src="${firstResult.image}" title="${firstResult.character}" />`
+			line += `<span>${firstResult.character} ${firstResult.release.eu}</span></div>`
+		}	
+		
+		if(dateType == "au" && firstResult.release.au != null){
+			line = `<div class='result'><img src="${firstResult.image}" title="${firstResult.character}" />`
+			line += `<span>${firstResult.character} ${firstResult.release.au}</span></div>`
+		}		
+		
+		if(dateType == "jp" && firstResult.release.jp != null){
+			line = `<div class='result'><img src="${firstResult.image}" title="${firstResult.character}" />`
+			line += `<span>${firstResult.character} ${firstResult.release.jp}</span></div>`
+		}			
+		
+		if(dateType == "all"){
+			line = `<div class='result'><img src="${firstResult.image}" title="${firstResult.character}" />`
+			line += `<span>${firstResult.character}</span></div>`
+		}
 
 		console.log(firstResult.type);
 		console.log(amiiboStyle);
 
+		//Type
 		if(styleType == "all")
 		{
 			bigString += line;
@@ -84,6 +114,7 @@
 		{
 			bigString += line;
 		}
+
 
         }
 
@@ -99,13 +130,21 @@
  <h1>Amiibo Finder</h1>
 </header>
 
-<p>Search Term -&gt; <input id="searchterm" type="text" size="20" maxlength="20" autofocus value="mario" /></p>
-<select id="amiiboStyle">
+<p>Search Term: <input id="searchterm" type="text" size="20" maxlength="20" autofocus value="mario" /></p>
+<p>Amiibo Type: <select id="amiiboStyle">
 	<option value="all">All</option>
 	<option value="Figure">Figure</option>
 	<option value="Card">Card</option>
 	<option value="Band">Band</option>
-</select>
+</select></p>
+<p>Release date: <select id="amiiboDate">
+	<option value="all">No sort</option>
+	<option value="na">NA</option>
+	<option value="eu">EU</option>
+	<option value="au">AU</option>
+	<option value="jp">JP</option>
+</select></p>
+
 <p><button type="button" id="search" class="green">Search!</button></p>
 <p id="debug"></p>
 <hr>
