@@ -3,150 +3,33 @@
 <head>
 	<meta charset="utf-8" />
  	<title>Amiibo Finder</title>
+	 <script src="main.js"></script>
 	 <link rel="stylesheet" href="styles/style.css">
-  <script>
-  "use strict";
-	window.onload = init;
-	
-	function init(){
-		document.querySelector("#search").onclick = getData;
-	}
-	
-	function getData(){
-		// 1 - main entry point to web service
-		const SERVICE_URL = "https://www.amiiboapi.com/api/amiibo/?name=";
-		
-		// No API Key required!
-		
-		// 2 - build up our URL string
-		// not necessary for this service endpoint
-		let url = SERVICE_URL;
-		
-		// 3 - parse the user entered term we wish to search
-		// not necessary for this service endpoint
-		let term = document.querySelector("#searchterm").value.trim();
-		term = encodeURIComponent(term);
-		url+=term;
-		
-		// 4 - update the UI
-		document.querySelector("#debug").innerHTML = `<b>Querying web service with:</b> <a href="${url}" target="_blank">${url}</a>`;
-		
-		// 5 - create a new XHR object
-		let xhr = new XMLHttpRequest();
-	
-
-		// 6 - set the onload handler
-		xhr.onload = dataLoaded;
-	
-		// 7 - set the onerror handler
-		xhr.onerror = dataError;
-
-		// 8 - open connection and send the request
-		xhr.open("GET",url);
-		xhr.send();
-	}
-	
-	function dataError(e){
-		console.log("An error occurred");
-	}
-	
-	function dataLoaded(e){
-		// 1 - e.target is the xhr object
-		let xhr = e.target;
-
-		//Get tpye
-		var amiiboStyle = document.querySelector("#amiiboStyle");
-		var styleType = amiiboStyle.value;
-
-		//Check release
-		var amiiboDate = document.querySelector("#amiiboDate");
-		var dateType = amiiboDate.value;
-
-		// 2 - xhr.responseText is the JSON file we just downloaded
-		console.log(xhr.responseText);
-	
-		// 3 - turn the text into a parsable JavaScript object
-		let obj = JSON.parse(xhr.responseText);
-		
-		// 4 - if there is an array of results, loop through them
-		let results = obj.amiibo;
-		let bigString = "<p><i>Here is the first result!</i></p>";
-        for(let i=0; i<results.length; i++){
-        let firstResult = results[i];
-		
-		//I apologize in advance for this code. Actually I'm not sorry. I'm evil.
-		let line = ``;
-
-		if(dateType == "na" && firstResult.release.na != null){
-			line = `<div class='result'><img src="${firstResult.image}" title="${firstResult.character}" />`
-			line += `<span>${firstResult.character} ${firstResult.release.na}</span></div>`
-		}
-		
-		if(dateType == "eu" && firstResult.release.eu != null){
-			line = `<div class='result'><img src="${firstResult.image}" title="${firstResult.character}" />`
-			line += `<span>${firstResult.character} ${firstResult.release.eu}</span></div>`
-		}	
-		
-		if(dateType == "au" && firstResult.release.au != null){
-			line = `<div class='result'><img src="${firstResult.image}" title="${firstResult.character}" />`
-			line += `<span>${firstResult.character} ${firstResult.release.au}</span></div>`
-		}		
-		
-		if(dateType == "jp" && firstResult.release.jp != null){
-			line = `<div class='result'><img src="${firstResult.image}" title="${firstResult.character}" />`
-			line += `<span>${firstResult.character} ${firstResult.release.jp}</span></div>`
-		}			
-		
-		if(dateType == "all"){
-			line = `<div class='result'><img src="${firstResult.image}" title="${firstResult.character}" />`
-			line += `<span>${firstResult.character}</span></div>`
-		}
-
-		console.log(firstResult.type);
-		console.log(amiiboStyle);
-
-		//Type
-		if(styleType == "all")
-		{
-			bigString += line;
-		}
-		else if(firstResult.type != "all" && firstResult.type == styleType)
-		{
-			bigString += line;
-		}
-
-
-        }
-
-		// 5 - display final results to user
-		document.querySelector("#content").innerHTML = bigString;
-	}	
-	
-  </script>
 
 </head>
 <body>
 <header>
- <h1>Amiibo Finder</h1>
-</header>
-
+ <h1>Emmett's Amiibo Finder</h1>
 <p>Search Term: <input id="searchterm" type="text" size="20" maxlength="20" autofocus value="mario" /></p>
-<p>Amiibo Type: <select id="amiiboStyle">
+Amiibo Type: <select id="amiiboStyle">
 	<option value="all">All</option>
 	<option value="Figure">Figure</option>
 	<option value="Card">Card</option>
 	<option value="Band">Band</option>
-</select></p>
-<p>Release date: <select id="amiiboDate">
-	<option value="all">No sort</option>
-	<option value="na">NA</option>
-	<option value="eu">EU</option>
-	<option value="au">AU</option>
-	<option value="jp">JP</option>
+</select>
+&nbsp;
+Release region: <select id="amiiboDate">
+	<option value="all">No set region</option>
+	<option value="na">North America</option>
+	<option value="eu">Europe</option>
+	<option value="au">Australia</option>
+	<option value="jp">Japan</option>
 </select></p>
 
 <p><button type="button" id="search" class="green">Search!</button></p>
 <p id="debug"></p>
+</header>
+
 <hr>
 <h2>Results</h2>
  <div id="content">
