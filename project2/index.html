@@ -9,16 +9,21 @@
 </head>
 <body>
 <header>
+
  <h1>Emmett's Amiibo Finder</h1>
-<p>Search Term: <input id="searchterm" type="text" size="20" maxlength="20" autofocus value="mario" /></p>
-Amiibo Type: <select id="amiiboStyle">
+ <h3>(Leave blank to search all Amiibo)</h3>
+
+<p>Search Term: <input id="searchterm" class="searchBar" type="text" size="20" maxlength="20" autofocus value="" /></p>
+
+Amiibo Type: <select id="amiiboStyle" class="amiiboDrop">
 	<option value="all">All</option>
 	<option value="Figure">Figure</option>
 	<option value="Card">Card</option>
 	<option value="Band">Band</option>
 </select>
+
 &nbsp;
-Release region: <select id="amiiboDate">
+Release region: <select id="amiiboDate" class="amiiboDrop">
 	<option value="all">No set region</option>
 	<option value="na">North America</option>
 	<option value="eu">Europe</option>
@@ -26,12 +31,11 @@ Release region: <select id="amiiboDate">
 	<option value="jp">Japan</option>
 </select></p>
 
-<p><button type="button" id="search" class="green">Search!</button></p>
+<p><button type="button" id="search" class="searchButton">Search!</button></p>
 <p id="debug"></p>
 </header>
 
 <hr>
-<h2>Results</h2>
  <div id="content">
  <p>No data yet!</p>
  </div>

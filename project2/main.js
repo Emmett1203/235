@@ -71,31 +71,31 @@
 		let line = ``;
 
 		if(dateType == "na" && firstResult.release.na != null){
-			line = `<div class='result'><img src="${firstResult.image}" title="${firstResult.character}" />`
+			line = `<div class='result'><a href="${firstResult.image}"target="_blank"><img src="${firstResult.image}" title="${firstResult.character}" /></a>`
 			line += `<span>${firstResult.character}</span>`  
-			line += `<p>NA: ${firstResult.release.na}</p></div>`
+			line += `<p>North America: ${firstResult.release.na}</p></div>`
 		}
 		
 		if(dateType == "eu" && firstResult.release.eu != null){
-			line = `<div class='result'><img src="${firstResult.image}" title="${firstResult.character}" />`
+			line = `<div class='result'><a href="${firstResult.image}"target="_blank"><img src="${firstResult.image}" title="${firstResult.character}" /></a>`
 			line += `<span>${firstResult.character}</span>`  
-			line += `<p>EU: ${firstResult.release.eu}</p></div>`
+			line += `<p>Europe: ${firstResult.release.eu}</p></div>`
 		}	
 		
 		if(dateType == "au" && firstResult.release.au != null){
-			line = `<div class='result'><img src="${firstResult.image}" title="${firstResult.character}" />`
+			line = `<div class='result'><a href="${firstResult.image}"target="_blank"><img src="${firstResult.image}" title="${firstResult.character}" /></a>`
 			line += `<span>${firstResult.character}</span>`  
-			line += `<p>JP: ${firstResult.release.au}</p></div>`
+			line += `<p>Australia: ${firstResult.release.au}</p></div>`
 		}		
 		
 		if(dateType == "jp" && firstResult.release.jp != null){
-			line = `<div class='result'><img src="${firstResult.image}" title="${firstResult.character}" />`
+			line = `<div class='result'><a href="${firstResult.image}"target="_blank"><img src="${firstResult.image}" title="${firstResult.character}" /></a>`
 			line += `<span>${firstResult.character}</span>`  
-			line += `<p>JP: ${firstResult.release.jp}</p></div>`
+			line += `<p>Japan: ${firstResult.release.jp}</p></div>`
 		}			
 		
 		if(dateType == "all"){
-			line = `<div class='result'><img src="${firstResult.image}" title="${firstResult.character}" />`
+			line = `<div class='result'><a href="${firstResult.image}"target="_blank"><img src="${firstResult.image}" title="${firstResult.character}" /></a>`
 			line += `<span>${firstResult.character}</span></div>`
 		}
 
@@ -116,7 +116,7 @@
         }
 
         let plauge = `<div class='result'><img src="images/Minilla.png" title="Plauge" />`;
-        plauge += `<h2>Plauge</h2></div>`
+        plauge += `<h2>Plague</h2></div>`
 
         bigString += plauge;
 
