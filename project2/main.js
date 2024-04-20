@@ -1,7 +1,42 @@
 "use strict";
+
 	window.onload = init;
-	
+
+
+
 	function init(){
+		const searchField = document.querySelector("#searchterm");
+		const typeSelect = document.querySelector("#amiiboStyle");
+		const regionSelect = document.querySelector("#amiiboDate");
+		const prefix = "eem1203-"; // change 'abc1234' to your banjo id
+		const nameKey = prefix + "name"
+		const typeKey = prefix + "type";
+		const regionKey = prefix + "region";
+
+		const storedName = localStorage.getItem(nameKey);
+		const storedtype = localStorage.getItem(typeKey);
+		const storedregion = localStorage.getItem(regionKey);
+
+		if (storedName){
+			searchField.value = storedName;
+		}else{
+			searchField.value = ""; // a default value if `nameField` is not found
+		}
+
+		if (storedtype){
+			typeSelect.querySelector(`option[value='${storedtype}']`).selected = true;
+			document.querySelector('body').style.backgroundColor = storedtype;
+		}
+
+		if (storedregion){
+			regionSelect.querySelector(`option[value='${storedregion}']`).selected = true;
+			document.querySelector('body').style.backgroundColor = storedregion;
+		}
+
+		searchField.onchange = e=>{ localStorage.setItem(nameKey, e.target.value); };
+		typeSelect.onchange = e=>{ localStorage.setItem(typeKey, e.target.value);}
+		regionSelect.onchange = e=>{ localStorage.setItem(regionKey, e.target.value);}
+
 		document.querySelector("#search").onclick = getData;
 	}
 	
