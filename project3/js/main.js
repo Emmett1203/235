@@ -20,7 +20,7 @@ app.loader.load();
 let stage;
 
 let startScene;
-let gameScene,dot;
+let gameScene,dot,wall;
 let gameOverScene;
 
 //only body.appendChild when the page is loaded
@@ -46,6 +46,8 @@ function setup() {
 	// #5 - Create DOT
 	dot = new Dot();
     gameScene.addChild(dot);
+    wall = new Wall();
+    gameScene.addChild(wall);
 
     // #8 - Start update loop
 	app.ticker.add(gameLoop);
@@ -88,6 +90,8 @@ function startGame(){
     gameScene.visible = true;
     dot.x = 20;
     dot.y = 300;
+    wall.x = 600;
+    wall.y = 300;
 }
 
 function gameLoop(){
@@ -112,4 +116,6 @@ function gameLoop(){
     let h2 = dot.height/2;
     dot.x = clamp(newX,0 + w2, sceneWidth - w2)
     dot.y = clamp(newY,0 + h2, sceneHeight - h2)
+
+    wall.x = wall.x - 1;
 }
